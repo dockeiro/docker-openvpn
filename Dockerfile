@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM ubuntu:bionic
 
 LABEL maintainer = Gustavo Mathias Rocha <gustavo8000@icloud.com>
 
