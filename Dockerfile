@@ -29,7 +29,6 @@ RUN echo "**** install packages ****" \
     && ./configure --prefix=/usr \
     && make \
     && make install \
-    && openvpn --version \
     && mkdir /etc/openvpn && mkdir -p /run/openvpn/ \
     && chmod +x /etc/openvpn/update-resolv-conf \
     && rm -rf /tmp/* \
