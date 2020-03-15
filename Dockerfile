@@ -5,7 +5,7 @@ LABEL maintainer = Gustavo Mathias Rocha <gustavo8000@icloudl.com>
 RUN \
   echo "**** install packages ****" && \
     apt-get update && \
-    apt-get install -y upgrade && \
+    apt-get upgrade -y && \
   echo "**** download openvpn-as ****" \
     curl -L https://install.pivpn.io | bash \
   && echo "**** ensure home folder for abc user set to /config ****" && \
