@@ -29,7 +29,6 @@ RUN echo "**** install packages ****" \
     && ./configure --prefix=/usr \
     && make \
     && make install \
-    && mkdir /etc/openvpn && mkdir -p /run/openvpn/ \
     && chmod +x /etc/openvpn/update-resolv-conf \
     && rm -rf /tmp/* \
     && rm -rf /var/lib/apt/lists/*
@@ -38,5 +37,3 @@ WORKDIR /root
 
 # ports and volumes
 EXPOSE 943/tcp 1194/udp 9443/tcp
-
-CMD [ "up", "/etc/openvpn/update-resolv-conf" ]
