@@ -1,12 +1,8 @@
 FROM debian:buster-slim
 
-LABEL maintainer = Gustavo Mathias Rocha <gustavo8000@icloudl.com>
+LABEL maintainer = Gustavo Mathias Rocha <gustavo8000@icloud.com>
 
-RUN \
-  echo "**** install packages ****" && \
-    apt-get update && \
-    apt-get upgrade -y && \
-  echo "**** download openvpn-as ****" \
+RUN echo "**** download openvpn-as ****" \
     curl -L https://install.pivpn.io | bash \
   && echo "**** ensure home folder for abc user set to /config ****" && \
     usermod -d /config abc && \
