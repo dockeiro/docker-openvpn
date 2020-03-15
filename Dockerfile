@@ -1,8 +1,27 @@
-FROM ubuntu:bionic
+FROM debian:buster-slim
 
-LABEL maintainer = Gustavo Mathias Rocha <gustavo8000@icloud.com>
+LABEL maintainer = Gustavo Mathias Rocha <gustavo8000@icloudl.com>
 
-RUN echo "**** download openvpn-as ****" \
+RUN \
+  echo "**** install packages ****" && \
+    apt-get update && \
+    apt-get install -y \
+	bridge-utils \
+	iproute2 \
+	iptables \
+	liblzo2-2 \
+	net-tools \
+	python \
+	python-mysqldb \
+	python-pkg-resources \
+	python-pyrad \
+	python-serial \
+	rsync \
+	sqlite3 \
+	ucarp \
+    bash \
+    && \
+  echo "**** download openvpn-as ****" \
     curl -L https://install.pivpn.io | bash \
   && echo "**** ensure home folder for abc user set to /config ****" && \
     usermod -d /config abc && \
