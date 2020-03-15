@@ -2,7 +2,6 @@ FROM debian:buster-slim
 
 LABEL maintainer = Gustavo Mathias Rocha <gustavo8000@icloud.com>
 ARG VERSION
-ENV VERSION = ${VERSION}-2.4.8
 
 COPY update-resolv-conf /etc/openvpn/update-resolv-conf
 
@@ -24,8 +23,8 @@ RUN echo "**** install packages ****" \
     liblzo2-dev \
     libpam0g-dev \
     build-essential \
-    && echo "**** download openvpn-as ****" \
-    && wget https://swupdate.openvpn.org/community/releases/openvpn-${VERSION}.tar.gz \
+    && echo "**** download openvpn-as v${VERSION} ****" \
+    && wget http://swupdate.openvpn.org/community/releases/openvpn-${VERSION}.tar.gz \
     && tar -zxf openvpn-${VERSION}.tar.gz && cd openvpn-${VERSION} \
     && ./configure --prefix=/usr \
     && make \
